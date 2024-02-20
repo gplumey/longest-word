@@ -1,3 +1,5 @@
+# pylint: disable=missing-docstring
+# pylint: disable=too-few-public-methods
 import random
 import string
 
@@ -7,7 +9,6 @@ class Game:
         self.grid = []
         for _ in range(9):
             self.grid.append(random.choice(string.ascii_uppercase))
-        pass
 
     def is_valid(self, word: str) -> bool:
         """Return True if and only if the word is valid, given the Game's grid"""
@@ -22,5 +23,5 @@ class Game:
                 else:
                     return False
             return True
-        else:
-            return False
+
+        return False
