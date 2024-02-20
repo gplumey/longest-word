@@ -2,6 +2,7 @@
 # pylint: disable=too-few-public-methods
 import random
 import string
+import requests
 
 class Game:
     def __init__(self) -> list:
@@ -22,6 +23,8 @@ class Game:
                     copy.remove(letter)
                 else:
                     return False
-            return True
+            url = "https://wagon-dictionary.herokuapp.com/" + word
+            is_english_word = requests.get(url).json().get("found")
+            return is_english_word
 
         return False
