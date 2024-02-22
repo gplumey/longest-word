@@ -21,7 +21,7 @@ def check():
     is_valid = game.is_valid(word)
     if is_valid:
         add_score(len(word))
-    return render_template('check.html', is_valid=is_valid, grid=game.grid, word=word)
+    return render_template('check.html', is_valid=is_valid, grid=game.grid, word=word, score=get_score())
 
 def get_score():
     score = session.get("score")
